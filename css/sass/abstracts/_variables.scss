@@ -1,0 +1,27 @@
+//  colors
+
+:root {
+  --main-color: #091913;
+  --main-hover: #007940;
+  --sec-color: #4B5256;
+  --text-color: #9B9B9B;
+  --back-color: #F1F1F1;
+  --black-color: #000;
+  --white-color: #fff;
+  --border-color: #f0f0f0;
+
+  --border-radius: 24px;
+  font-size: 16px;
+}
+
+$main: var(--main-color);
+$hover: var(--main-hover);
+$sec: var(--sec-color);
+$text: var(--text-color);
+$black: var(--black-color);
+$white: var(--white-color);
+
+$back: var(--back-color);
+$border: var(--border-color);
+
+$radius: var(--border-radius);

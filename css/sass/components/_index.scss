@@ -1,0 +1,463 @@
+/* login page*/
+.body-wrapper {
+  width: 100%;
+}
+.upper-head {
+  @include flexCenter;
+  padding: 24px 20px 33px;
+}
+.logo-ancor {
+  display: inline-block;
+}
+.logo-img {
+  width: 137px;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+.main-img {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 25px;
+  figure {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1440/358;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
+.main-bg {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 25px;
+  figure {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1220/233;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.section-title {
+  font-weight: 700;
+  font-size: 24px;
+  color: $main;
+  text-align: start;
+  margin-bottom: 15px;
+}
+.quiz-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  @include max-991 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include max-767 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.quiz-card {
+  display: block;
+  width: 100%;
+  background-color: $white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px 0px #dddddd1f;
+  border: 1px solid #e2e2e2;
+  @include tr;
+  &:hover {
+    border-color: $hover;
+    img {
+      transform: scale(1.02);
+    }
+  }
+  figure {
+    width: 100%;
+    aspect-ratio: 393/157;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include tr;
+    }
+  }
+}
+.card-content {
+  padding: 25px 20px;
+}
+.card-title {
+  margin: 0 0 15px;
+  position: relative;
+  font-weight: 700;
+  font-size: 20px;
+  color: $hover;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 270px;
+    height: 1px;
+    max-width: 100%;
+    background-color: #e2e2e2;
+    margin-top: 15px;
+  }
+}
+.card-status {
+  font-weight: 400;
+  font-size: 16px;
+  color: #7f8200;
+  margin-bottom: 20px;
+  &.status-unstart {
+    color: #7f8200;
+  }
+  &.status-closed {
+    color: #bd0b00;
+  }
+  &.status-ended {
+    color: #007a13;
+  }
+}
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  border-radius: 30px;
+  background: #bd74000d;
+  width: 100%;
+  max-width: 100%;
+  height: 55px;
+  margin: 0 auto 25px;
+  box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.big-text {
+  margin: 0;
+}
+
+.countdown-el {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: $main;
+}
+.card-foot {
+  font-weight: 600;
+  font-size: 16px;
+  color: $main;
+}
+footer {
+  background-color: $hover;
+  bottom: 0;
+  margin-top: 70px;
+}
+.footer-cont {
+  @include flexCenter;
+  width: 100%;
+  height: 48px;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: $white;
+}
+.quiz-content {
+  width: 100%;
+  max-width: 357px;
+  text-align: center;
+  margin: 0 auto 25px;
+  .card-title {
+    margin-bottom: 30px;
+  }
+  .card-title::after {
+    display: none;
+  }
+}
+.quiz-form {
+  box-shadow: 0px 4px 4px 0px #dddddd1f;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  background-color: $white;
+  padding: 27px 40px;
+  width: 100%;
+  max-width: 577px;
+  margin: 0 auto 40px;
+  text-align: center;
+  @include max-767 {
+    padding: 25px 20px;
+  }
+}
+.form-label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 29.98px;
+  color: $main;
+  margin-bottom: 40px;
+}
+.form-input {
+  background-color: #f4f4f4;
+  border: 2px solid #f4f4f4;
+  height: 44px;
+  width: 100%;
+  padding: 0 50px;
+  border-radius: 24px;
+  text-align: start;
+  color: #9c9c9c;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0;
+  @include tr;
+  caret-color: $main;
+}
+.form-input:focus {
+  border-color: $hover;
+  outline: 0;
+}
+.form-btn-cont {
+  width: 100%;
+  margin-top: 27px;
+  text-align: center;
+}
+
+.form-btn {
+  background-color: $hover;
+  width: 100%;
+  max-width: 284px;
+  height: 44px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  @include flexCenter;
+  font-weight: 500;
+  font-size: 16px;
+  color: $white;
+  border: none;
+  outline: none;
+  text-decoration: none !important;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: $white;
+    background-color: $main;
+  }
+}
+
+.form-btn:focus {
+  outline: none;
+}
+
+.apply-btn {
+  width: 315px;
+  max-width: 100%;
+  height: 48px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 25px;
+  @include flexCenter;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 16px;
+  color: $white;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  flex-shrink: 0;
+  background-color: $main;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+    opacity: 0.7;
+  }
+}
+.group-input textarea.form-input {
+  height: 107px;
+  padding: 10px 30px;
+  resize: unset;
+}
+.group-input .check-group {
+  margin-bottom: 5px;
+}
+.success-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.success-icon {
+  font-size: 100px;
+  margin-bottom: 5px;
+  color: #74d557;
+}
+.error-icon {
+  font-size: 100px;
+  margin-bottom: 5px;
+  color: #ff0000;
+}
+.success-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: $main;
+  margin-bottom: 15px;
+}
+.success-pargh {
+  font-size: 16px;
+  font-weight: 400;
+  color: $sec;
+  max-width: 340px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+@include max-991 {
+  .upper-head {
+    .logo-img {
+      width: 100px;
+    }
+  }
+}
+.check-group {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 100%;
+  margin-bottom: 35px;
+}
+.check-width {
+  width: 100%;
+  max-width: 100%;
+}
+.check-label {
+  /* min-width: 25%; */
+  text-align: start;
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  color: $main;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease-in-out;
+}
+.check-group input[type="checkbox"],
+.check-group input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.check-group .checkmark {
+  border: none;
+  border-radius: 0;
+  background-color: $white;
+  border: 1px solid $main;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  @include tr;
+}
+.check-group .custom-checkmark {
+  border-radius: 2px;
+}
+.check-group input[type="checkbox"] ~ .checkmark {
+  border-radius: 2px;
+}
+.check-group:hover input ~ .checkmark {
+  background-color: $white;
+  transition: all 0.3s ease-in-out;
+}
+.check-group input:checked ~ .checkmark {
+  background-color: $hover;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  visibility: visible;
+}
+.check-group input:checked ~ .checkmark:after {
+  opacity: 1;
+  visibility: visible;
+}
+.check-group input:checked ~ .checkmark {
+  background-color: $white;
+  border-color: $hover;
+}
+.check-label:has(input:checked) {
+  color: $hover;
+}
+.check-group input:checked ~ .custom-checkmark {
+  background-color: $hover;
+}
+.check-group .checkmark:after {
+  content: "";
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  background-color: $hover;
+}
+.check-group .custom-checkmark:after {
+  content: "\f00c";
+  font-family: "line Awesome Free";
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  color: $white;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-pargh {
+  font-weight: 400;
+  font-size: 16px;
+  color: $main;
+  margin-bottom: 30px;
+}
+.swiper-cont {
+  position: relative;
+  padding-inline-start: 20px;
+}
+@media (min-width: 576px) {
+  .swiper-cont {
+    padding-inline-start: calc((100vw - 540px) / 2);
+  }
+}
+@media (min-width: 768px) {
+  .swiper-cont {
+    padding-inline-start: calc((100vw - 720px) / 2);
+  }
+}
+.swiper-cont {
+  @include min-992 {
+    padding-inline-start: calc((100vw - 960px) / 2);
+  }
+  @include min-1200 {
+    padding-inline-start: calc((100vw - 1170px) / 2);
+  }
+}
+/*                          main-slider                             */

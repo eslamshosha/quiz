@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>quiz app</title>
+    <title>winner box</title>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -38,58 +38,117 @@
       </div>
     </div>
     <!-- preloader -->
-    <div class="body-wrapper">
-      <div class="form-section">
-        <div class="form-container">
-          <div class="upper-head">
-            <a href="index.html" class="logo-ancor">
-              <figure class="logo-img">
-                <img src="images/logo.png" alt="logo" class="img-fluid" />
-              </figure>
-            </a>
-          </div>
-          <p class="quiz-address">
-            لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي
-            الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم
-            إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت
-            مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن
-            كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف.
-          </p>
-          <h2 class="form-head">انتهاء المسابقة فى خلال</h2>
-          <div class="countdown-container">
-            <div class="countdown-el days-c">
-              <p class="big-text" id="days">0</p>
-              <span>يوم</span>
+    <header class="upper-head">
+      <a href="index.html" class="logo-ancor">
+        <figure class="logo-img">
+          <img src="images/logo.png" alt="logo" class="img-fluid" />
+        </figure>
+      </a>
+    </header>
+    <div class="main-img">
+      <figure>
+        <img src="images/main.jpeg" alt="bg" />
+      </figure>
+    </div>
+    <section class="quiz-section">
+      <div class="container">
+        <h3 class="section-title">المسابقات</h3>
+        <div class="quiz-cont">
+          <a href="quiz-page.html" class="quiz-card">
+            <figure>
+              <img src="images/item.jpeg" alt="quiz-img" />
+            </figure>
+            <div class="card-content">
+              <h4 class="card-title">توقع مباراة نهائي دوري الأبطال</h4>
+              <div class="card-status status-unstart">لم تبدأ</div>
+              <div class="countdown-container">
+                <div class="countdown-el days-c">
+                  <p class="big-text" class="days">0</p>
+                  <span>يوم</span>
+                </div>
+                <div class="countdown-el hours-c">
+                  <p class="big-text" class="hours">0</p>
+                  <span>ساعة</span>
+                </div>
+                <div class="countdown-el mins-c">
+                  <p class="big-text" class="mins">0</p>
+                  <span>دقيقه</span>
+                </div>
+                <div class="countdown-el seconds-c">
+                  <p class="big-text" class="seconds">0</p>
+                  <span>ثانيه</span>
+                </div>
+              </div>
+              <span class="card-foot">لبدأ المسابقة</span>
             </div>
-            <div class="countdown-el hours-c">
-              <p class="big-text" id="hours">0</p>
-              <span>ساعة</span>
+          </a>
+          <a href="#" class="quiz-card">
+            <figure>
+              <img src="images/item.jpeg" alt="quiz-img" />
+            </figure>
+            <div class="card-content">
+              <h4 class="card-title">توقع مباراة نهائي دوري الأبطال</h4>
+              <div class="card-status status-closed">اغلقت</div>
+              <div class="countdown-container">
+                <div class="countdown-el days-c">
+                  <p class="big-text" id="days">0</p>
+                  <span>يوم</span>
+                </div>
+                <div class="countdown-el hours-c">
+                  <p class="big-text" id="hours">0</p>
+                  <span>ساعة</span>
+                </div>
+                <div class="countdown-el mins-c">
+                  <p class="big-text" id="mins">0</p>
+                  <span>دقيقه</span>
+                </div>
+                <div class="countdown-el seconds-c">
+                  <p class="big-text" id="seconds">0</p>
+                  <span>ثانيه</span>
+                </div>
+              </div>
+              <span class="card-foot">تم إغلاق المسابقة</span>
             </div>
-            <div class="countdown-el mins-c">
-              <p class="big-text" id="mins">0</p>
-              <span>دقيقه</span>
+          </a>
+          <a href="#" class="quiz-card">
+            <figure>
+              <img src="images/item.jpeg" alt="quiz-img" />
+            </figure>
+            <div class="card-content">
+              <h4 class="card-title">توقع مباراة نهائي دوري الأبطال</h4>
+              <div class="card-status status-ended">تم السحب</div>
+              <div class="countdown-container">
+                <div class="countdown-el days-c">
+                  <p class="big-text" id="days">0</p>
+                  <span>يوم</span>
+                </div>
+                <div class="countdown-el hours-c">
+                  <p class="big-text" id="hours">0</p>
+                  <span>ساعة</span>
+                </div>
+                <div class="countdown-el mins-c">
+                  <p class="big-text" id="mins">0</p>
+                  <span>دقيقه</span>
+                </div>
+                <div class="countdown-el seconds-c">
+                  <p class="big-text" id="seconds">0</p>
+                  <span>ثانيه</span>
+                </div>
+              </div>
+              <span class="card-foot">تم إعلان الفائز</span>
             </div>
-            <div class="countdown-el seconds-c">
-              <p class="big-text" id="seconds">0</p>
-              <span>ثانيه</span>
-            </div>
-          </div>
-          <div class="form-btn-cont">
-            <a href="quiz.html" class="form-btn">دخول</a>
-          </div>
-          <p class="copy-right">© موشن 2023 ©</p>
+          </a>
         </div>
       </div>
-      <div class="img-bg" style="height: 100vh;">
-        <figure class="">
-          <img
-            src="images/bg.jpg"
-            alt=""
-            class="img-fluid"
-          />
-        </figure>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer-cont">
+          <span>تصميم وتطوير </span>
+          <img src="images/raiyan.png" alt="raiyansoft" />
+        </div>
       </div>
-    </div>
+    </footer>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>

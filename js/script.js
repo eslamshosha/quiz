@@ -6,7 +6,31 @@ window.onload = function () {
   }, 700);
 };
 $(document).ready(function () {
-  
+  ///////// ** related** /////////
+  var specials = new Swiper(".related-slider .swiper-container", {
+    loop: true,
+    autoplay: true,
+    slidesPerView: 3.2,
+    spaceBetween: 20,
+    breakpoints: {
+      0: {
+        slidesPerView: 1.2,
+        spaceBetween: 15,
+      },
+      767: {
+        slidesPerView: 2.2,
+        spaceBetween: 15,
+      },
+      992: {
+        slidesPerView: 2.2,
+        spaceBetween: 15,
+      },
+      1199: {
+        slidesPerView: 3.2,
+        spaceBetween: 30,
+      },
+    },
+  });
 });
 const timerExists =
   document.getElementsByClassName("countdown-container").length > 0;

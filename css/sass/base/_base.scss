@@ -1,17 +1,9 @@
 body {
-  font-family: "SSTArabic";
+  font-family: "Cairo";
   box-sizing: border-box;
   font-style: normal;
   font-weight: 400;
-  background-color: $white;
-}
-body.internal-page {
-  padding-top: 110px;
-}
-@include max-991 {
-  body.internal-page {
-    padding-top: 83.38px;
-  }
+  background-color: #f4f4f4;
 }
 .overflow {
   overflow: hidden;

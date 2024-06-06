@@ -162,6 +162,7 @@ function spin(d) {
       console.log(data[picked].xp);
       document.getElementById("spinWinner").innerHTML = data[picked].xp;
       document.getElementById("spinOverlay").style.display = "flex";
+      document.getElementById("body").classList.add("overflow");
 
       //container.on("click", spin);
     });
@@ -213,5 +214,6 @@ function getRandomNumbers() {
 }
 function closeSpin() {
   document.getElementById("spinOverlay").style.display = "none";
-  console.log("5555");
+  document.getElementById("body").classList.remove("overflow");
+
 }

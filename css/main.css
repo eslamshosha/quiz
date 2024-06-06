@@ -1014,6 +1014,7 @@ footer {
   font-size: 30px;
   color: var(--main-color);
   transition: all 0.3s ease-in-out;
+  margin-top: 40px;
 }
 #close-overlay:hover {
   color: var(--main-hover);
@@ -1037,7 +1038,7 @@ footer {
   justify-content: center;
   gap: 12px;
   padding: 48px;
-  width: 100%;
+  width: 80%;
   max-width: 407px;
 }
 .spin-result h3 {

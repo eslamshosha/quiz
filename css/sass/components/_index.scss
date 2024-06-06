@@ -634,6 +634,7 @@ footer {
   font-size: 30px;
   color: $main;
   @include tr;
+  margin-top: 40px;
   &:hover {
     color: $hover;
   }
@@ -655,7 +656,7 @@ footer {
   justify-content: center;
   gap: 12px;
   padding: 48px;
-  width: 100%;
+  width: 80%;
   max-width: 407px;
   h3 {
     font-weight: 600;

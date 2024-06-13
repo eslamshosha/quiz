@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
     <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
 
@@ -38,18 +39,34 @@
       </div>
     </div>
     <!-- preloader -->
-    <header class="upper-head">
-      <a href="index.html" class="logo-ancor">
-        <figure class="logo-img">
-          <img src="images/logo.png" alt="logo" class="img-fluid" />
+    <section class="header-cont">
+      <header class="upper-head">
+        <a href="index.html" class="logo-ancor">
+          <figure class="logo-img">
+            <img src="images/logo.png" alt="logo" class="img-fluid" />
+          </figure>
+        </a>
+        <button
+          type="button"
+          class="points-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          النقاط
+        </button>
+      </header>
+      <div class="main-img">
+        <figure class="main-figure">
+          <img src="images/main.png" alt="bg" />
         </figure>
-      </a>
-    </header>
-    <div class="main-img">
-      <figure>
-        <img src="images/main.jpeg" alt="bg" />
-      </figure>
-    </div>
+        <figure
+          class="float-img"
+          style="background-image: url(images/float.gif)"
+        >
+          <!-- <img src="images/float.gif" alt="bg"> -->
+        </figure>
+      </div>
+    </section>
     <section class="quiz-section">
       <div class="container">
         <h3 class="section-title">المسابقات</h3>
@@ -106,6 +123,7 @@
     </footer>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper.min.js"></script>
     <script src="js/script.js"></script>
     <script>
       CountDownTimer("02/19/2025 10:1 AM", "countdown");
@@ -155,5 +173,52 @@
         timer = setInterval(showRemaining, 1000);
       }
     </script>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              نقاط الفائزين
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ><i class="las la-times"></i></button>
+          </div>
+          <div class="modal-body">
+            <ul class="points-list">
+              <li>
+                <span class="points-name">نادر أحمد</span>
+                <span class="points-num"> 125 نقطة</span>
+              </li>
+              <li>
+                <span class="points-name">نادر أحمد</span>
+                <span class="points-num"> 125 نقطة</span>
+              </li>
+              <li>
+                <span class="points-name">نادر أحمد</span>
+                <span class="points-num"> 125 نقطة</span>
+              </li>
+              <li>
+                <span class="points-name">نادر أحمد</span>
+                <span class="points-num"> 125 نقطة</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

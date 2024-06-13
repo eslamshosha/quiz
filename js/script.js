@@ -50,6 +50,8 @@ var data = [
   { label: "nader", value: 1, xp: "nader" },
   { label: "ahmed", value: 1, xp: "ahmed" },
   { label: "abdo", value: 1, xp: "abdo" },
+  { label: "abdo", value: 1, xp: "abdo" },
+  { label: "abdo", value: 1, xp: "abdo" },
   { label: "0x", value: 1, xp: "you Lost 0x" },
   { label: "2x", value: 1, xp: "you Win 2x" },
 ];
@@ -84,7 +86,8 @@ var arcs = vis
   .data(pie)
   .enter()
   .append("g")
-  .attr("class", "slice");
+  .attr("class", "slice")
+  .style("fill", "#69b3a2");
 
 arcs
   .append("path")
@@ -120,6 +123,8 @@ function spin(d) {
   $("#spin").on("click", null);
   //all slices have been seen, all done
   //console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
+  document.getElementById("spinOverlay").style.display = "flex";
+  document.getElementById("body").classList.add("overflow");
   if (oldpick.length == data.length) {
     console.log("done");
     $("#spin").on("click", null);
@@ -161,8 +166,8 @@ function spin(d) {
       oldrotation = rotation;
       console.log(data[picked].xp);
       document.getElementById("spinWinner").innerHTML = data[picked].xp;
-      document.getElementById("spinOverlay").style.display = "flex";
-      document.getElementById("body").classList.add("overflow");
+      document.getElementById("spin-result").classList.add("active");
+      // document.getElementById("spinOverlay").style.display = "flex";
 
       //container.on("click", spin);
     });
@@ -213,7 +218,7 @@ function getRandomNumbers() {
   return array;
 }
 function closeSpin() {
+  document.getElementById("spin-result").classList.remove("active");
   document.getElementById("spinOverlay").style.display = "none";
   document.getElementById("body").classList.remove("overflow");
-
 }

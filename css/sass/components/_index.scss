@@ -2,34 +2,117 @@
 .body-wrapper {
   width: 100%;
 }
+.header-cont {
+  position: relative;
+}
+header {
+  position: absolute;
+  top: 172px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  @include max-991 {
+    top: 10%;
+  }
+}
 .upper-head {
   @include flexCenter;
-  padding: 24px 20px 33px;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 20px 33px;
 }
 .logo-ancor {
   display: inline-block;
 }
 .logo-img {
-  width: 137px;
+  width: 164px;
   max-width: 100%;
   margin-bottom: 0;
+}
+.points-btn {
+  width: 284px;
+  height: 42px;
+  max-width: 100%;
+  border-radius: 20px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none !important;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--white-color);
+  background-image: linear-gradient(
+    to right,
+    rgb(179, 85, 223),
+    rgb(72, 35, 113),
+    rgb(72, 35, 113),
+    rgb(179, 85, 223)
+  );
+  // background: var(
+  //   --b,
+  //   linear-gradient(301deg, rgb(72, 35, 113) 14.24%, rgb(179, 85, 223) 73.21%)
+  // );
+  box-shadow: 0 0 0 0 rgba(#2c3f5e, 0.5);
+  box-shadow: 0 0 0 0 rgb(105 160 214 / 40%);
+  background-size: 300% 100%;
+  -moz-animation: pulse 2s infinite;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+  transition: all 0.4s ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(105, 160, 214, 1);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(44, 63, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 50px rgba(44, 63, 94, 0);
+  }
+}
+.points-btn:hover {
+  text-decoration: none;
+  color: var(--white-color);
+  box-shadow: inset 0 0 0 2em var(--main-hover);
+  background-position: 100% 0;
+}
+.quiz-section {
+  margin-top: -60px;
+  position: relative;
+  z-index: 1;
+  @include max-991 {
+    margin: 0;
+  }
 }
 .main-img {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 25px;
-  figure {
+  margin-bottom: 0;
+  position: relative;
+  .main-figure {
     width: 100%;
     height: auto;
     position: relative;
     overflow: hidden;
-    aspect-ratio: 1440/358;
+    aspect-ratio: 1440/940;
+    min-height: 330px;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top;
     }
+  }
+  .float-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-size: 500px;
+    background-repeat: repeat;
   }
 }
 .main-bg {
@@ -53,7 +136,7 @@
 .section-title {
   font-weight: 700;
   font-size: 24px;
-  color: $main;
+  color: $white;
   text-align: start;
   margin-bottom: 15px;
 }
@@ -71,16 +154,15 @@
 .quiz-card {
   display: block;
   width: 100%;
-  background-color: $white;
+  background: var(--b, linear-gradient(301deg, #482371 14.24%, #b355df 73.21%));
   text-align: center;
   text-decoration: none;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 4px 4px 0px #dddddd1f;
-  border: 1px solid #e2e2e2;
+  // box-shadow: 0px 4px 4px 0px #dddddd1f;
+  // border: 1px solid #e2e2e2;
   @include tr;
   &:hover {
-    border-color: $hover;
     img {
       transform: scale(1.02);
     }
@@ -102,35 +184,35 @@
   padding: 25px 20px;
 }
 .card-title {
-  margin: 0 0 15px;
+  margin: 0 0 30px;
   position: relative;
   font-weight: 700;
   font-size: 20px;
-  color: $hover;
-  &::after {
-    content: "";
-    display: inline-block;
-    width: 270px;
-    height: 1px;
-    max-width: 100%;
-    background-color: #e2e2e2;
-    margin-top: 15px;
-  }
+  color: $white;
+  // &::after {
+  //   content: "";
+  //   display: inline-block;
+  //   width: 270px;
+  //   height: 1px;
+  //   max-width: 100%;
+  //   background-color: #e2e2e2;
+  //   margin-top: 15px;
+  // }
 }
 .card-status {
   font-weight: 400;
   font-size: 16px;
-  color: #7f8200;
+  color: $white;
   margin-bottom: 20px;
-  &.status-unstart {
-    color: #7f8200;
-  }
-  &.status-closed {
-    color: #bd0b00;
-  }
-  &.status-ended {
-    color: #007a13;
-  }
+  // &.status-unstart {
+  //   color: #7f8200;
+  // }
+  // &.status-closed {
+  //   color: #bd0b00;
+  // }
+  // &.status-ended {
+  //   color: #007a13;
+  // }
 }
 .countdown-container {
   display: flex;
@@ -138,12 +220,12 @@
   align-items: center;
   gap: 22px;
   border-radius: 30px;
-  background: #bd74000d;
+  background: rgba(51, 22, 86, 0.4);
   width: 100%;
   max-width: 100%;
   height: 55px;
   margin: 0 auto 25px;
-  box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.12);
+  // box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.12);
 }
 .counttimer {
   display: flex;
@@ -152,7 +234,7 @@
   gap: 22px;
   font-size: 14px;
   font-weight: 700;
-  color: $main;
+  color: $white;
   span {
     display: flex;
     flex-direction: column;
@@ -160,7 +242,7 @@
     text-align: center;
     font-size: 14px;
     font-weight: 700;
-    color: $main;
+    color: $white;
   }
 }
 .big-text {
@@ -171,12 +253,12 @@
   text-align: center;
   font-size: 14px;
   font-weight: 700;
-  color: $main;
+  color: $white;
 }
 .card-foot {
   font-weight: 600;
   font-size: 16px;
-  color: $main;
+  color: $white;
 }
 footer {
   background-color: $hover;
@@ -205,10 +287,9 @@ footer {
   }
 }
 .quiz-form {
-  box-shadow: 0px 4px 4px 0px #dddddd1f;
-  border: 1px solid #e2e2e2;
+  background: var(--b, linear-gradient(301deg, #482371 14.24%, #b355df 73.21%));
+  box-shadow: 0px 4px 4px 0px rgba(221, 221, 221, 0.12);
   border-radius: 10px;
-  background-color: $white;
   padding: 27px 40px;
   width: 100%;
   max-width: 577px;
@@ -222,7 +303,7 @@ footer {
   font-weight: 700;
   font-size: 16px;
   line-height: 29.98px;
-  color: $main;
+  color: $white;
   margin-bottom: 40px;
 }
 .form-input {
@@ -230,7 +311,7 @@ footer {
   border: 2px solid #f4f4f4;
   height: 44px;
   width: 100%;
-  padding: 0 50px;
+  padding: 0 25px;
   border-radius: 24px;
   text-align: start;
   color: #9c9c9c;
@@ -251,7 +332,7 @@ footer {
 }
 
 .form-btn {
-  background-color: $hover;
+  background-color: $white;
   width: 100%;
   max-width: 284px;
   height: 44px;
@@ -260,7 +341,7 @@ footer {
   @include flexCenter;
   font-weight: 500;
   font-size: 16px;
-  color: $white;
+  color: $hover;
   border: none;
   outline: none;
   text-decoration: none !important;
@@ -268,7 +349,7 @@ footer {
   transition: all 0.3s ease-in-out;
   &:hover {
     color: $white;
-    background-color: $main;
+    background-color: $hover;
   }
 }
 
@@ -319,23 +400,23 @@ footer {
 .success-icon {
   font-size: 100px;
   margin-bottom: 5px;
-  color: #74d557;
+  color: $white;
 }
 .error-icon {
   font-size: 100px;
   margin-bottom: 5px;
-  color: #ff0000;
+  color: $white;
 }
 .success-title {
   font-size: 16px;
   font-weight: 700;
-  color: $main;
+  color: $white;
   margin-bottom: 15px;
 }
 .success-pargh {
   font-size: 16px;
   font-weight: 400;
-  color: $sec;
+  color: $white;
   max-width: 340px;
   margin: 0 auto;
   margin-bottom: 10px;
@@ -367,7 +448,7 @@ footer {
   position: relative;
   font-weight: 500;
   font-size: 16px;
-  color: $main;
+  color: $white;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -384,8 +465,8 @@ footer {
 .check-group .checkmark {
   border: none;
   border-radius: 0;
-  background-color: $white;
-  border: 1px solid $main;
+  background-color: transparent;
+  border: 1px solid $white;
   width: 21px;
   height: 21px;
   border-radius: 50%;
@@ -401,13 +482,10 @@ footer {
 .check-group input[type="checkbox"] ~ .checkmark {
   border-radius: 2px;
 }
-.check-group:hover input ~ .checkmark {
-  background-color: $white;
-  transition: all 0.3s ease-in-out;
-}
-.check-group input:checked ~ .checkmark {
-  background-color: $hover;
-}
+// .check-group:hover input ~ .checkmark {
+//   background-color: $white;
+//   transition: all 0.3s ease-in-out;
+// }
 .checkmark:after {
   content: "";
   position: absolute;
@@ -419,21 +497,21 @@ footer {
   visibility: visible;
 }
 .check-group input:checked ~ .checkmark {
-  background-color: $white;
-  border-color: $hover;
+  // background-color: $white;
+  border-color: $white;
 }
 .check-label:has(input:checked) {
-  color: $hover;
+  color: $white;
 }
 .check-group input:checked ~ .custom-checkmark {
-  background-color: $hover;
+  // background-color: $white;
 }
 .check-group .checkmark:after {
   content: "";
   border-radius: 50%;
   width: 17px;
   height: 17px;
-  background-color: $hover;
+  background-color: $white;
 }
 .check-group .custom-checkmark:after {
   content: "\f00c";
@@ -452,7 +530,7 @@ footer {
 .card-pargh {
   font-weight: 400;
   font-size: 16px;
-  color: $main;
+  color: $white;
   margin-bottom: 30px;
 }
 .swiper-cont {
@@ -575,18 +653,22 @@ footer {
 #spinwheel svg {
   width: 100%;
   height: 100%;
-  border: 15px solid #ce3816;
+  border: 15px solid #b355df;
   border-radius: 50%;
-  background: #ce3816;
+  background: #b355df;
 }
 .chartholder {
+  background: #b355df;
+  circle {
+    fill: #ffd700 !important;
+  }
 }
 
 .wheel-spin-box .chartholder .slice path {
-  fill: #441ced;
+  fill: #b355df;
 }
 .wheel-spin-box .chartholder .slice:nth-child(2n + 1) path {
-  fill: #f9aa00;
+  fill: #482371;
 }
 .wheel-spin-arrow {
   position: relative;
@@ -596,6 +678,10 @@ footer {
 }
 .wheel-spin-arrow svg {
   max-width: 65px;
+  fill: #dc27ff;
+  path {
+    fill: #482371;
+  }
 }
 .spin-click-button {
   background-color: #000;
@@ -607,16 +693,12 @@ footer {
   border-radius: 15px;
 }
 
-@media (max-width: 479.98px) {
-  #spinwheel {
-    width: 270px;
-  }
-}
-.overlay {
+.overlay,
+.overlay-spin {
   position: fixed;
   inset: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background: rgba(4, 15, 43, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -632,41 +714,57 @@ footer {
   border: none;
   outline: none !important;
   font-size: 30px;
-  color: $main;
+  color: $white;
   @include tr;
   margin-top: 40px;
   &:hover {
-    color: $hover;
+    color: $white;
   }
 }
 .winner-spin {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .spin-result {
-  background-color: $white;
-  border: 1px solid #e2e2e2;
-  box-shadow: 0px 4px 4px 0px #dddddd1f;
+  background: #37ad00;
+  box-shadow: 0px 4px 4px 0px rgba(221, 221, 221, 0.12);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  visibility: hidden;
   gap: 12px;
-  padding: 48px;
+  padding: 21px;
   width: 80%;
   max-width: 407px;
   h3 {
     font-weight: 600;
     font-size: 28px;
-    color: $main;
+    color: $white;
   }
   #spinWinner {
     font-size: 28px;
     font-weight: 700;
-    color: $hover;
+    color: $white;
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media (max-width: 479.98px) {
+  .spin-result {
+    h3,
+    #spinWinner {
+      font-size: 24px;
+    }
+  }
+  #spinwheel {
+    width: 240px;
   }
 }
 .spin-img {
@@ -687,5 +785,70 @@ footer {
   .celecbrite-2 {
     max-width: 450px;
     max-height: 50vh;
+  }
+}
+.modal {
+  background: rgba(4, 15, 43, 0.9);
+}
+.modal-title {
+  color: $white;
+  font-size: 20px;
+  font-weight: 700;
+}
+.modal-dialog {
+  max-width: 409px;
+  margin: 10% auto;
+  @include max-991{
+    padding: 0 20px;
+  }
+}
+.modal-content {
+  border-radius: 10px;
+  border: 0;
+  background: var(--b, linear-gradient(301deg, #482371 14.24%, #b355df 73.21%));
+}
+.modal-header {
+  border: 0;
+  padding-top: 40px;
+  padding-bottom: 0;
+  justify-content: center;
+  position: relative;
+}
+.modal-header .btn-close {
+  position: absolute;
+  inset-inline-end: 20px;
+  top: 20px;
+  color: $white;
+  background: none;
+  font-size: 24px;
+  opacity: 1;
+}
+.modal-header .btn-close:hover {
+  color: $hover;
+}
+.modal-body {
+  padding: 25px 20px 40px;
+}
+.points-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  li {
+    border-radius: 10px;
+    background: rgb(72, 35, 113, 0.5);
+    box-shadow: 0px 4px 4px 0px rgba(221, 221, 221, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 26px;
+    margin-bottom: 8px;
+    color: $white;
+    font-size: 18px;
+    .points-name {
+      font-weight: 500;
+    }
+    .points-num {
+      font-weight: 700;
+    }
   }
 }
